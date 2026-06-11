@@ -1,0 +1,6 @@
+{
+  "name": "Staff Office and Remote Day Calculator",
+  "description": "An interactive calculator to determine weekly office and remote days based on holidays, sick leaves, and annual leaves with dynamic carry-over calculation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
