@@ -193,7 +193,7 @@ export default function App() {
                     <div className="flex gap-3 items-start">
                       <span className="font-mono bg-emerald-950/80 text-emerald-400 font-bold px-2 py-0.5 rounded text-xs border border-emerald-900/40">Rule 3.4</span>
                       <p className="leading-relaxed">
-                        <strong className="text-white">Annual Leave Priority:</strong> Deducts to office day first then remote day, repeat. If no office days are left to deduct, then deducts remote days. Office day deductions by this rule do NOT carry on to next week.
+                        <strong className="text-white">Annual Leave Priority:</strong> Deducts to office day first then remote day, repeat. If no office days are left to deduct, then deducts remote days, and vice versa. Office day deductions by this rule do NOT carry on to next week.
                       </p>
                     </div>
                     <div className="flex gap-3 items-start">
@@ -452,7 +452,7 @@ export default function App() {
                     </span>
                     <div>
                       <span className="block text-xs font-bold text-white">Annual Leave</span>
-                      <span className="block text-[10px] text-[#64748B]">Deducts office first, then remote (no carry-over)</span>
+                      <span className="block text-[10px] text-[#64748B]">Deducts office first, then remote (and vice versa)</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

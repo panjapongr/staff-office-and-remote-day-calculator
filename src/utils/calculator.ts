@@ -76,7 +76,7 @@ export function calculateDays(settings: LeaveSettings, input: LeaveInput): Calcu
   }
 
   // 2. Annual Leave
-  // "annual leave deduct to office day first then remote day, repeat, if no office days left to deduct then deduct remote days, office day deduct by this rule don't carry on to next week"
+  // "annual leave deduct to office day first then remote day, repeat, if no office days left to deduct then deduct remote days and vice versa, office day deduct by this rule don't carry on to next week"
   for (let i = 1; i <= input.annualLeave; i++) {
     const beforeOffice = currentOffice;
     const beforeRemote = currentRemote;
@@ -108,8 +108,15 @@ export function calculateDays(settings: LeaveSettings, input: LeaveInput): Calcu
           affected = 'remote';
           actionDescription = `Annual Leave Day ${i} deducted 1 day from remote pool (Remaining remote: ${currentRemote}).`;
         } else {
-          affected = 'none';
-          actionDescription = `Annual Leave Day ${i} attempted to deduct 1 remote day, but remote days were already at 0.`;
+          // "and vice versa"
+          if (currentOffice > 0) {
+            currentOffice -= 1;
+            affected = 'office';
+            actionDescription = `Annual Leave Day ${i} attempted to deduct remote pool first, but no remote days were left. Deducted 1 day from office pool (Remaining office: ${currentOffice}).`;
+          } else {
+            affected = 'none';
+            actionDescription = `Annual Leave Day ${i} attempted to deduct remote pool first, but no remote or office days were left.`;
+          }
         }
       }
     } else {
