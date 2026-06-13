@@ -418,7 +418,7 @@ export default function App() {
                     </span>
                     <div>
                       <span className="block text-xs font-bold text-white">Sick Leave</span>
-                      <span className="block text-[10px] text-[#64748B]">Deducts remote first, then office with carry-over</span>
+                      <span className="block text-[10px] text-[#64748B]">Deducts remote days first, then office days with carry-over</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -452,7 +452,7 @@ export default function App() {
                     </span>
                     <div>
                       <span className="block text-xs font-bold text-white">Annual Leave</span>
-                      <span className="block text-[10px] text-[#64748B]">Deducts office first, then remote (and vice versa)</span>
+                      <span className="block text-[10px] text-[#64748B]">Deducts office days first, then remote days (no carry-over)</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -486,7 +486,7 @@ export default function App() {
                     </span>
                     <div>
                       <span className="block text-xs font-bold text-white">Public Holidays</span>
-                      <span className="block text-[10px] text-[#64748B]">Deducts office first, then remote (no carry-over)</span>
+                      <span className="block text-[10px] text-[#64748B]">Deducts office days first, then remote days (no carry-over)</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
