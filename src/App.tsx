@@ -26,8 +26,8 @@ import { calculateDays } from './utils/calculator';
 export default function App() {
   // Application State
   const [settings, setSettings] = useState<LeaveSettings>({
-    targetOfficeDays: 2,
-    targetRemoteDays: 3,
+    targetOfficeDays: 3,
+    targetRemoteDays: 2,
     deductionPattern: 'alternating',
     startFreshOnHoliday: true,
   });
